@@ -1,0 +1,62 @@
+.common-section {
+    margin: 5rem 0;
+  }
+  
+  .our-services img {
+    width: 80%;
+    height: 75%;
+    margin-top: 10rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.8rem 0.8rem;
+    border-radius: 1.5rem;
+  }
+
+  .our-services .main-heading {
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    margin: 3rem auto;
+  }
+  
+  .our-services-info {
+    margin-top: 4rem;
+  }
+  
+  .our-services-rightside {
+    margin-top: 10rem;
+  }
+  
+  .our-services-rightside-content {
+    padding-left: 8rem;
+  }
+
+  @media(max-width:780px) {
+    .our-services img {
+        width: 80%;
+        height: 68%;
+        margin-top: 8rem;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 0.8rem 0.8rem;
+        border-radius: 1.5rem;
+      }
+    
+      .our-services .main-heading {
+        display: flex;
+        justify-content: center;
+        font-weight: bolder;
+        margin: 3rem auto;
+      }
+      
+      .our-services-info {
+        margin-top: 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+
+      .btn-pad {
+        margin-left: 2rem;
+      }
+          
+      .our-services-rightside-content {
+        padding-left: 2rem;
+        padding-top: 2rem;
+      }
+  }

@@ -1,0 +1,43 @@
+.work-container {
+    width: 80vw;
+    padding: 5rem;
+    box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.1);
+    margin-top: -10rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+  }
+  
+  .work-container .main-heading {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    margin-bottom: 4rem;
+    word-spacing: 1rem;
+  }
+  
+  .work-container-subdiv {
+    padding: 0 6rem;
+  }
+
+  .work-container .sub-heading {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  .fontawesome-style {
+    font-size: 2rem;
+    color: var(--primary-color);
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: var(--bgcolor);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    margin: 2rem auto;
+  }
+
+  .main-hero-para {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
