@@ -19,6 +19,8 @@ const config = {
       "We have sharpened our focus on bringing the best talent to all aspects of the digital product suite, roles that add tremendous value to the evolving world. Teragon is committed to teaching the skills of the future by making high-quality education accessible and affordable to individuals, students, and professionals around the world.",
     ],
     aboutImage: "./img/hero1.png",
+    buttonText: "Learn more",
+    buttonUri: "/why-choose-us"
   },
   missonVision: {
     title: "Mission & Vision",
@@ -60,26 +62,32 @@ const config = {
     desc: "As the world of digital learning accelerates, we in Teragon believe it is critical to study and understand the impact of the digital learning experience on student outcomes. Our dedicated impact research team is working tirelessly to understand this impact, and how digital learning can be improved and our courses and learning methods are designed and explained in a manner where it enhances the students or individual career.",
     courseOptions: [
       {
+        logo: "./img/courses/java.png",
         title: "Java Full Stack",
         desc: "Java Development Course with use cases and scenarios for software requirements.",
       },
       {
+        logo: "./img/courses/cloud.png",
         title: "Cloud Computing",
         desc: "An approach to designing, constructing and operating workloads that are built in the cloud and take full advantage of Cloud computing model.",
       },
       {
+        logo: "./img/courses/python.png",
         title: "Python",
         desc: "High-level, interpreted, general purpose programming with object orientation scripting.",
       },
       {
+        logo: "./img/courses/c.png",
         title: "C Programming",
         desc: "General purpose programming language with developing softwares like operating systems, data bases and compilers.",
       },
       {
+        logo: "./img/courses/ds.png",
         title: "Data Science",
         desc: "Use case scenarios of modern tools & techniques to find unseen patterns and to make best business decisions.",
       },
       {
+        logo: "./img/courses/sales.png",
         title: "Sales & Marketing",
         desc: "Hands-on training on needs of the market, complete training on CRM's.",
       },

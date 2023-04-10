@@ -8,14 +8,14 @@ import Footer from "../Footer";
 
 const Home = () => {
   return (
-    <>
+    <div className="outer_container">
       <Navbar />
       <Header />
       <WhatWeStrive />
       <AboutUs />
       <PlacedAt />
       <Footer />
-    </>
+    </div>
   );
 };
 

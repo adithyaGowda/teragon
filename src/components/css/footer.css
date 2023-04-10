@@ -67,3 +67,15 @@ footer {
       margin: 0 10rem ;
     }
   }
+
+  .footer-mid .f {
+    display: flex;
+    padding-left: 2.5rem;
+  }
+
+
+  footer h4 {
+    color: #fff;
+    padding-left: 4rem;
+    padding-top: 2.5rem;
+  }

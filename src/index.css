@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Century Gothic', sans-serif;
+    zoom: 0.98;
   }
 
 :root {
@@ -12,7 +13,7 @@
     --main-text-color: #333333;
   }
 html {
-    font-size: 62.5%;
+    font-size: 65%;
   }
   
 a {
@@ -50,3 +51,9 @@ a {
       max-width: 1400px;
     }
   }
+
+
+  /* .outer_container {
+    margin: 3rem;
+    padding: 3rem;
+  } */

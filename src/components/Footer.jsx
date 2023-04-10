@@ -27,23 +27,25 @@ const Footer = () => {
                 </div>
                 <div className="col-6 col-lg-4">
                   <h3>{footer.middleTitle1}</h3>
-                  <div class="row">
-                    <div class="col-sm"><i className="fab fa-facebook-f"></i></div>
-                    <div class="col-sm"><p>{contact.number}</p></div>
+                  <div className="row footer-mid">
+                    <div className="col-sm f">
+                    <i className="fas fa-phone fontawesome-style"></i>
+                    <h4>{contact.number}</h4></div>                   
                   </div>
+                  <br/>
                   <h3>{footer.middleTitle2}</h3>
-                  <ul>
-                    <li>
-                      <p>{contact.email}</p>
-                    </li>
-                  </ul>
+                  <div className="row footer-mid">
+                    <div className="col-sm f">
+                    <i className="fas fa-envelope fontawesome-style"></i>
+                    <h4>{contact.email}</h4></div>                   
+                  </div>
                 </div>
 
                 <div className="col-6 col-lg-4 follow">
                   <h3>{footer.rightTitle}</h3>
                   <div className="row">
                     {footer.socials.map((ele) => (
-                      <div className="col-3 mx-auto">
+                       <div className="col-3 mx-auto" key={ele.logo}>
                         <Link to={ele.uri}>
                           <i className={`${ele.logo} fontawesome-style`}></i>
                         </Link>

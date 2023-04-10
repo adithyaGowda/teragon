@@ -23,7 +23,7 @@ const AboutUs = () => {
                 <p className="main-hero-para">{aboutUs.desc[1]}</p>
               </div>
               <button className="btn-style btn-style-border btn-pad">
-                learn more
+                {aboutUs.buttonText}
               </button>
             </div>
           </div>

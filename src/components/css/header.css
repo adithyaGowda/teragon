@@ -6,6 +6,8 @@
     color: #fff;
     background-color: var(--primary-color);
     font-size: 1.6rem;
+    /* padding-left: 1.6rem;
+    padding-top: 0.6rem; */
   }
   
   .btn-style:first-child {
