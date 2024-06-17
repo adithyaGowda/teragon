@@ -1,43 +1,79 @@
-import {
-  Box,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-} from "@mui/material";
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
+import { Box, Icon, List, ListItemButton, ListItemText } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const SideBar = () => {
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const handleClick = (item) => {
+    setSelectedItem(item);
+  };
+  const menuItems = [
+    {
+      id: "projectScoreList",
+      label: "Project Score List",
+      link: "/projectScoreList",
+      image: "../projectscoreupdate.png",
+    },
+    {
+      id: "projectScoreUpdate",
+      label: "Project Score Update",
+      link: "/projectScoreUpdate",
+      image: "../new.png",
+    },
+    {
+      id: "projectData",
+      label: "Project Data",
+      link: "/",
+      image: "../projectdata.png",
+    },
+    {
+      id: "projectParam",
+      label: "Project Parameter",
+      link: "/projectParam",
+      image: "../parameter.png",
+    },
+  ];
   return (
     <Box
       sx={{
         width: "20%",
-        height: "100vh",
+        height: "100%",
         backgroundColor: "#F9F9F9",
-        paddingTop: "20px",
+        paddingTop: "5px",
+        borderRight: "1px solid gray",
       }}
     >
       <List>
-        <ListItemButton>
+        {menuItems.map((item) => (
           <Link
-            to={"/projectParam"}
-            style={{ textDecoration: "none", color: "black" }}
+            key={item.id}
+            to={item.link}
+            style={{
+              textDecoration: "none",
+              color: selectedItem === item.id ? "white" : "Black",
+              fontFamily: "Roboto",
+              fontSize: "8px",
+            }}
           >
-            <ListItemText primary="Project Parameter" />
+            <ListItemButton
+              onClick={() => handleClick(item.id)}
+              sx={{
+                backgroundColor: selectedItem === item.id ? "#004BA8" : "",
+              }}
+            >
+              <img
+                src={item.image}
+                alt=""
+                style={{ width: "20px", height: "20px", padding: "10px" }}
+              />
+              <ListItemText primary={item.label} />
+            </ListItemButton>
           </Link>
-        </ListItemButton>
-        <ListItemButton>
-          <Link
-            to={"/projectData"}
-            style={{ textDecoration: "none", color: "black" }}
-          >
-            <ListItemText primary="Project Data" />
-          </Link>
-        </ListItemButton>
+        ))}
       </List>
     </Box>
   );
 };
-
 export default SideBar;
