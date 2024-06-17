@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import config from "../../config";
+import config from "../../../config";
 import { useEffect } from "react";
 import {
   deleteParam,
-  fetchData,
   resetEditDelete,
   editParam,
-} from "../utils/parameterSlice";
+  fetchParamData,
+} from "../../utils/parameterSlice";
 import TableContainer from "@mui/material/TableContainer";
 import Table from "@mui/material/Table";
 import TableHead from "@mui/material/TableHead";
@@ -39,7 +39,7 @@ const ParameterTable = () => {
 
   useEffect(() => {
     if (status === "idle") {
-      dispatch(fetchData());
+      dispatch(fetchParamData());
     }
   }, [status, dispatch]);
 
@@ -73,25 +73,53 @@ const ParameterTable = () => {
   return (
     <>
       <TableContainer
-        stickyHeader
         component={Paper}
-        sx={{ maxWidth: "100%", maxHeight: "400px", overflow: "auto" }}
+        sx={{
+          maxWidth: "100%",
+          maxHeight: "360px",
+          overflowX: "auto",
+          overflowY: "auto",
+        }}
         size="small"
         aria-label="a dense table"
       >
-        <Table>
+        <Table sx={{ minWidth: 1800 }} stickyHeader>
           <TableHead>
             <TableRow sx={{ backgroundColor: "#004BA8", padding: 0 }}>
-              <TableCell sx={{ color: "white", textAlign: "center" }}>
+              <TableCell
+                sx={{
+                  color: "white",
+                  textAlign: "center",
+                  backgroundColor: "#004BA8",
+                }}
+              >
                 {tabelHead.actions}
               </TableCell>
-              <TableCell sx={{ color: "white", textAlign: "center" }}>
+              <TableCell
+                sx={{
+                  color: "white",
+                  textAlign: "center",
+                  backgroundColor: "#004BA8",
+                }}
+              >
                 {tabelHead.param_name}
               </TableCell>
-              <TableCell sx={{ color: "white", textAlign: "center" }}>
+              <TableCell
+                sx={{
+                  color: "white",
+                  textAlign: "center",
+                  backgroundColor: "#004BA8",
+                }}
+              >
                 {tabelHead.weightage}
               </TableCell>
-              <TableCell sx={{ color: "white", textAlign: "center" }}>
+              <TableCell
+                sx={{
+                  color: "white",
+                  paddingLeft: 50,
+                  backgroundColor: "#004BA8",
+                }}
+              >
                 {tabelHead.param_values}
               </TableCell>
             </TableRow>
@@ -109,7 +137,7 @@ const ParameterTable = () => {
                         deletedIds.includes(param.id)
                           ? {
                               textDecoration: "line-through",
-                              backgroundColor: "#D9D9D9",
+                              backgroundColor: "#ffcccc",
                             }
                           : {}
                       }
