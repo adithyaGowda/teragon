@@ -22,13 +22,14 @@ import AccessError from "./components/AccessError";
 
 const App = () => {
   const dispatch = useDispatch();
-  const code = new URLSearchParams(window.location.search).get("code");
-  // window.location.href.split("=")[1];
-  const ClientId = "itke9a465pu2h3c03re23lvu7";
-  const redirect_uri = "http://localhost:5173";
   const [isFetchingTokens, setIsFetchingTokens] = useState(false);
+  const [hasFetchedTokens, setHasFetchedTokens] = useState(false);
 
   useEffect(() => {
+    const code = new URLSearchParams(window.location.search).get("code");
+    const ClientId = "itke9a465pu2h3c03re23lvu7";
+    const redirect_uri = "http://localhost:5173";
+
     const fetchTokens = async (code) => {
       try {
         setIsFetchingTokens(true);
@@ -55,6 +56,7 @@ const App = () => {
             document.title,
             window.location.pathname
           );
+          setHasFetchedTokens(true);
         } else {
           console.error("Failed to get id_token");
         }
@@ -67,8 +69,15 @@ const App = () => {
 
     if (code && !localStorage.getItem("AGILE_ID_TOKEN") && !isFetchingTokens) {
       fetchTokens(code);
+    } else {
+      const idToken = localStorage.getItem("AGILE_ID_TOKEN");
+      if (idToken) {
+        const user = jwtDecode(idToken);
+        dispatch(getDataFromDummy(user.email.toLowerCase()));
+        setHasFetchedTokens(true);
+      }
     }
-  }, [code, dispatch, isFetchingTokens]);
+  }, [dispatch, isFetchingTokens]);
 
   const userData = useSelector((store) => store.user.userData);
 
@@ -76,11 +85,19 @@ const App = () => {
     dispatch(setIsSidebarOpen());
   };
 
-  if (!localStorage.getItem("AGILE_ID_TOKEN") && !isFetchingTokens) {
+  if (
+    !localStorage.getItem("AGILE_ID_TOKEN") &&
+    !isFetchingTokens &&
+    !hasFetchedTokens
+  ) {
     return <Login />;
   }
 
-  if (!userData || Object.keys(userData).length === 0) {
+  if (
+    !isFetchingTokens &&
+    hasFetchedTokens &&
+    (!userData || Object.keys(userData).length === 0)
+  ) {
     return <AccessError />;
   }
   console.log(userData);
