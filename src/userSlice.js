@@ -21,7 +21,8 @@ const userSlice = createSlice({
       state.userData = { ...action.payload };
     },
     getDataFromDummy: (state, action) => {
-      state.userData = users.filter((user) => user.email === action.payload)[0];
+      const user = users.find((user) => user.email === action.payload);
+      state.userData = user || {};
     },
   },
   extraReducers: (builder) => {
